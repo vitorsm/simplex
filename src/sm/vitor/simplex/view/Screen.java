@@ -14,7 +14,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import Gerenciamento.BoundsTela;
+import br.com.intcode.graphsupport.screenBounds.ScreenBounds;
 import sm.vitor.simplex.util.Parameters;
 import sm.vitor.simplex.view.components.EntryFunctionView;
 
@@ -37,12 +37,12 @@ public class Screen extends JFrame {
 	
 	public Screen() {
 		super();
-		BoundsTela bounds = new BoundsTela(1024, 700);
+		ScreenBounds bounds = new ScreenBounds(1024, 700);
 		
 		contentPanel = new JPanel(new GridBagLayout());
 		contentBar = new JScrollPane(contentPanel);
 		
-		this.setBounds(bounds.getComecaX(), bounds.getComecaY(), bounds.getTamTelaX(), bounds.getTamTelaY());
+		this.setBounds(bounds.getX(), bounds.getY(), bounds.getWidth(), bounds.getHeight());
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //		this.setContentPane(contentPanel);
 		this.setContentPane(contentBar);
